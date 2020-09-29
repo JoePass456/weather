@@ -15,16 +15,54 @@
 
 <body>
     <!-- main -->
-    <div class="container border">
-        <!-- Header-->
-        <div class="row justify-content-center">
-            <h2>Weather App</h2>
+    <div class="container-fluid p-2 justify-content-center">
+        <!-- Display before retrieving data -->
+        <div class="border rounded-lg border-dark p-2 bg-info justify-content-center">
+            <!-- Header-->
+            <div class="row justify-content-center">
+                <h2>Weather App</h2>
+            </div>
+            <!-- Input Bar-->
+            <div class="row justify-content-center">
+                <input type="text" placeholder="Enter 5-digit zipcode" id="myInput">
+                <button type="button" onclick="getZipcode();">Get weather</button>
+            </div>
         </div>
-        <!-- Input Bar-->
-        <div class="row justify-content-center">
-            <input type="text" placeholder="Enter 5-digit zipcode" id="myInput">
-            <button type="button" onclick="getZipcode();">Get weather</button>
-
+        <!-- Display after retrieve data -->
+        <div id="turnon" class="border rounded-lg border-dark p-2 bg-white justify-content-center">
+            <!-- City  -->
+            <div class="row justify-content-center">
+                <h2 class="p-2">City</h2>
+            </div>
+            <div class="row justify-content-center">
+                <p class="city border p-2">Lexington</p>
+            </div>
+            <!-- Temperature -->
+            <div class="row justify-content-center">
+                <h2 class="p-2">Temp</h2>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col text-center border">
+                    <span class="kel p-2">123</span><span>K</span>
+                </div>
+                <div class="col text-center border">
+                    <span class="deg p-2">123</span><span>F</span>
+                </div>
+                <div class="col text-center border">
+                    <span class="cel p-2">123</span><span>C</span>
+                </div>
+            </div>
+            <!-- Condition  -->
+            <div class="row justify-content-center">
+                <h2 class="p-2">Conditions</h2>
+            </div>
+            <div class="row justify-content-center">
+                <p class="con border p-2">Light Clouds</p>
+            </div>
+            <!--  Image  -->
+            <div class="row justify-content-center">
+                <p class="pic"></p>
+            </div>
         </div>
     </div>
 
