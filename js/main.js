@@ -23,9 +23,9 @@ async function getZipcode() {
     console.log(zipcode)
     //  Checks to see if zip looks valid and doublechecks with user
     if (zipcode.length != 5) {
-        alert('Invalid Zip, restart app');
+        alert('Invalid zipcode');
     } else {
-        alert('Get weather info for zipcode ' + zipcode + '?');        
+        //alert('Get weather info for zipcode ' + zipcode + '?');        
         data = await getWeather(zipcode);
     }
     // push elements to html
