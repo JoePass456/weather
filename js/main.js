@@ -48,4 +48,5 @@ async function getZipcode() {
 
 }
 
-
+// focus cursor on input element immediately on loading
+document.getElementById("myInput").focus();
