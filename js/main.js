@@ -41,6 +41,7 @@ async function getZipcode() {
     cel.innerHTML = Math.floor(data.main.temp - 273.15) + " " + "C";
     con.innerHTML = data.weather[0].description;
 
+
     // grab icon code
     let str = data.weather[0].icon;
     //console.log(str);
@@ -53,6 +54,8 @@ async function getZipcode() {
 
     
 
+
 }
 
-
+// focus cursor on input element immediately on loading
+document.getElementById("myInput").focus();
