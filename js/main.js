@@ -36,6 +36,8 @@ async function getZipcode() {
     cel.innerHTML = Math.floor(data.main.temp - 273.15) + " " + "C";
     con.innerHTML = data.weather[0].description;
     var img = document.createElement("img");
+    //clear pic on repeat runs
+    pic.innerHTML = '';
     let str = data.weather[0].icon;
     console.log(str);
     img.src = "http://openweathermap.org/img/wn/" + str + "@2x.png";
@@ -44,6 +46,7 @@ async function getZipcode() {
     //img.alt = alt;
 
     // This next line will just add it to the <body> tag
+    
     pic.appendChild(img);
 
 }
