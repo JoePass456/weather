@@ -17,10 +17,12 @@ async function getWeather(zip) {
     return d;
 }
 
+// get zip and display rest of page
 async function getZipcode() {
-    console.log("ran displayNow");
+    
+    //  get zip from input element
     var zipcode = document.getElementById("myInput").value;
-    console.log(zipcode)
+    
     //  Checks to see if zip looks valid and doublechecks with user
     if (zipcode.length != 5) {
         alert('Invalid zipcode');
@@ -28,26 +30,30 @@ async function getZipcode() {
         //alert('Get weather info for zipcode ' + zipcode + '?');        
         data = await getWeather(zipcode);
     }
-    // push elements to html
+
+    // make elements visible
     document.getElementById('turnon').style.visibility='visible'
+
+    // push data to html elements
     city.innerHTML = data.name;
     kel.innerHTML = Math.floor(data.main.temp);
     deg.innerHTML = Math.floor((data.main.temp - 273.15) * 9 / 5 + 32);
     cel.innerHTML = Math.floor(data.main.temp - 273.15) + " " + "C";
     con.innerHTML = data.weather[0].description;
-    var img = document.createElement("img");
-    //clear pic on repeat runs
-    pic.innerHTML = '';
-    let str = data.weather[0].icon;
-    console.log(str);
-    img.src = "http://openweathermap.org/img/wn/" + str + "@2x.png";
-    //img.width = width;
-    //img.height = height;
-    //img.alt = alt;
 
-    // This next line will just add it to the <body> tag
+
+    // grab icon code
+    let str = data.weather[0].icon;
+    //console.log(str);
+
+    // add icon to rest of url to get icon img
+    var src = "http://openweathermap.org/img/wn/" + str + "@2x.png";
+
+    // set pic div to img with attribute src
+    pic.innerHTML='<img src=\"' + src + '\">';
+
     
-    pic.appendChild(img);
+
 
 }
 
